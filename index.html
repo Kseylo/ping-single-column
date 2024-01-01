@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <script type="module" src="/src/emailValidation.ts"></script>
+        <script
+            src="https://kit.fontawesome.com/1fe1474bbd.js"
+            crossorigin="anonymous"
+        ></script>
         <link
             href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
             rel="stylesheet"
@@ -12,9 +17,66 @@
         <link rel="stylesheet" href="/src/style.css" />
         <title>Ping Single Column</title>
     </head>
-    <body>
-        <main class="container flex flex-col items-center">
-            <img src="/src/assets/images/logo.svg" alt="Ping logo" />
+    <body class="mt-24 flex h-dvh flex-col items-center justify-between">
+        <main class="container mb-6 flex max-w-4xl flex-col items-center px-6">
+            <img
+                src="/src/assets/images/logo.svg"
+                alt="Ping logo"
+                class="w-16"
+            />
+            <article class="mt-12 grid gap-4 text-center text-neutral-blue">
+                <h1 class="text-2xl text-neutral-gray md:text-4xl">
+                    We are launching
+                    <span class="font-bold text-neutral-blue">soon!</span>
+                </h1>
+
+                <p>Subscribe and get notified</p>
+            </article>
+            <form
+                novalidate
+                class="mt-8 flex w-full flex-col gap-3 md:flex-row"
+                id="email-form"
+            >
+                <input
+                    placeholder="Your email address..."
+                    class="flex-1 rounded-3xl border-2 border-secondary-blue p-3 pl-6 outline-none focus:border-primary-blue"
+                    type="email"
+                    name="email"
+                    id="email-input"
+                    required
+                />
+                <span id="email-error" aria-live="polite"></span>
+                <button
+                    class="flex-1 cursor-pointer rounded-3xl bg-primary-blue p-3 text-white hover:bg-secondary-blue md:max-w-64"
+                >
+                    Notify Me
+                </button>
+            </form>
+            <img
+                src="/src/assets/images/illustration-dashboard.png"
+                alt="dashboard illustration"
+                class="mt-20"
+            />
         </main>
+        <footer class="grid justify-center gap-8 pb-10 text-neutral-gray">
+            <ul class="flex justify-center gap-4">
+                <li>
+                    <i
+                        class="fa-brands fa-facebook-f w-9 cursor-pointer rounded-full border-2 p-2 text-center text-primary-blue hover:bg-primary-blue hover:text-white"
+                    ></i>
+                </li>
+                <li>
+                    <i
+                        class="fa-brands fa-twitter cursor-pointer rounded-full border-2 p-2 text-primary-blue hover:bg-primary-blue hover:text-white"
+                    ></i>
+                </li>
+                <li>
+                    <i
+                        class="fa-brands fa-instagram cursor-pointer rounded-full border-2 p-2 text-primary-blue hover:bg-primary-blue hover:text-white"
+                    ></i>
+                </li>
+            </ul>
+            &copy; Copyright Ping. All rights reserved.
+        </footer>
     </body>
 </html>

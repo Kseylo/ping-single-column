@@ -11,6 +11,9 @@ form?.addEventListener('submit', function (event) {
 
 function showError() {
     if (error) {
+        email?.classList.add('border-secondary-red')
+        error.classList.add('mb-3', 'mt-2')
+
         if (email?.validity.valueMissing) {
             error.textContent =
                 'Whoops! It looks like you forgot to add your email'

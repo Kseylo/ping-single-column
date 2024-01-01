@@ -34,20 +34,27 @@
             </article>
             <form
                 novalidate
-                class="mt-8 flex w-full flex-col gap-3 md:flex-row"
+                class="mt-8 flex w-full flex-col gap-3 md:flex-row md:items-start"
                 id="email-form"
             >
-                <input
-                    placeholder="Your email address..."
-                    class="flex-1 rounded-3xl border-2 border-secondary-blue p-3 pl-6 outline-none focus:border-primary-blue"
-                    type="email"
-                    name="email"
-                    id="email-input"
-                    required
-                />
-                <span id="email-error" aria-live="polite"></span>
+                <div class="flex flex-1 flex-col">
+                    <input
+                        placeholder="Your email address..."
+                        class="rounded-3xl border-2 border-secondary-blue p-3 pl-6 outline-none focus:border-primary-blue"
+                        type="email"
+                        name="email"
+                        id="email-input"
+                        required
+                    />
+                    <span
+                        id="email-error"
+                        aria-live="polite"
+                        class="text-center italic text-secondary-red"
+                    ></span>
+                </div>
+
                 <button
-                    class="flex-1 cursor-pointer rounded-3xl bg-primary-blue p-3 text-white hover:bg-secondary-blue md:max-w-64"
+                    class="flex-1 cursor-pointer rounded-3xl bg-primary-blue p-3 font-semibold text-white hover:bg-secondary-blue md:max-w-64"
                 >
                     Notify Me
                 </button>

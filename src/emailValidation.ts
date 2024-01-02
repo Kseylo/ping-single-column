@@ -2,6 +2,13 @@ const form = document.getElementById('email-form')
 const email = document.getElementById('email-input') as HTMLInputElement | null
 const error = document.getElementById('email-error')
 
+email?.addEventListener('input', function () {
+    if (email.validity.valid) {
+        error?.classList.add('invisible')
+        email?.classList.remove('border-secondary-red')
+    }
+})
+
 form?.addEventListener('submit', function (event) {
     if (!email?.validity.valid) {
         showError()
@@ -12,8 +19,7 @@ form?.addEventListener('submit', function (event) {
 function showError() {
     if (error) {
         email?.classList.add('border-secondary-red')
-        error.classList.add('mb-3', 'mt-2')
-
+        error.classList.remove('invisible')
         if (email?.validity.valueMissing) {
             error.textContent =
                 'Whoops! It looks like you forgot to add your email'
